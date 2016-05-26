@@ -1,13 +1,38 @@
 import React from 'react';
 
 var BookList = React.createClass({
+    getInitialState() {
+        return {
+            books: [
+                { name: "Zero to One", author: "Peter Thiel" },
+                { name: "Monk Who Sold Ferrari", author: "Robin Sharma" },
+                { name: "Wings of Fire", author: "APJ Kalam"}
+            ]
+        }
+    },
+    _renderBook(book) {
+        return (
+            <div className="checkbox">
+                <label>
+                    <input type="checkbox" />
+                    {book.name} -- {book.author}
+                </label>
+            </div>
+        )
+    },
     render() {
         return (
-            <h1>
-                Choose a book:
-            </h1>
+            <div>
+            <h3>Choose a book:</h3>
+                <form>
+                    {this.state.books.map((book) => {
+                        return this._renderBook(book);
+                    })}
+                    <input type="submit" className="btn btn-success" />
+                </form>
+            </div>
         );
-    } 
+    }
 });
 
 var ShippingDetails = React.createClass({
@@ -23,8 +48,11 @@ var DeliveryDetails = React.createClass({
 })
 
 var BookStore = React.createClass({
+    getInitialState() {
+        return {currentStep: 1}
+    },
     render() {
-        switch(step) {
+        switch(this.state.currentStep) {
             case 1:
                 return <BookList />
             case 2:
