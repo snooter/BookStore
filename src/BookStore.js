@@ -2,7 +2,7 @@ import React from 'react';
 
 var BookList = React.createClass({
     getInitialState() {
-        return {
+        return { 
             books: [
                 { name: "Zero to One", author: "Peter Thiel" },
                 { name: "Monk Who Sold Ferrari", author: "Robin Sharma" },
