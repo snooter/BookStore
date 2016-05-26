@@ -7,7 +7,7 @@ var BookList = React.createClass({
                 Choose a book:
             </h1>
         );
-    }
+    } 
 });
 
 var ShippingDetails = React.createClass({
