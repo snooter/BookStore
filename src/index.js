@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import BookStore from './BookStore';
+import BookStore from './BookStore';
 
 var InputExample = React.createClass({
     getInitialState() {
@@ -21,4 +21,8 @@ var InputExample = React.createClass({
     }
 });
 
-ReactDOM.render(<InputExample />, document.getElementById('root'));
+
+
+
+
+
